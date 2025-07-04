@@ -1,29 +1,12 @@
 package org.example;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+// Musikspieler-Klasse, die Musik abspielen kann
+public class MusicPlayer implements Playable {
 
-// Testklasse für MusicPlayer
-class MusicPlayerTest {
-
-    @Test
-    void play_shouldBeCallable() {
-        // Flag, um zu prüfen, ob play() aufgerufen wurde
-        boolean[] played = {false};
-
-        // MusicPlayer-Objekt mit überschriebenem play(), das Flag setzt
-        MusicPlayer player = new MusicPlayer() {
-            @Override
-            public void play() {
-                played[0] = true;
-                super.play();
-            }
-        };
-
-        // play() aufrufen
-        player.play();
-
-        // Prüfen, ob play() wirklich aufgerufen wurde
-        assertTrue(played[0]);
+    // Was passiert, wenn jemand play() aufruft
+    @Override
+    public void play() {
+        // Einfach nur ’ne Nachricht, dass gerade ein Song läuft
+        System.out.println("Spiele Song ab...");
     }
 }
